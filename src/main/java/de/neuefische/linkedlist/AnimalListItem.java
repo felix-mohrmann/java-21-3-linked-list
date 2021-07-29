@@ -1,19 +1,19 @@
 package de.neuefische.linkedlist;
 
-public class AnimalListItem {
+public class AnimalListItem<T> {
 
-    private Animal value;
-    private AnimalListItem next;
+    private T value;
+    private AnimalListItem<T> next;
 
-    public AnimalListItem(Animal animal) {
+    public AnimalListItem(T animal) {
         this.value = animal;
     }
 
-    public Animal getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(Animal value) {
+    public void setValue(T value) {
         this.value = value;
     }
 

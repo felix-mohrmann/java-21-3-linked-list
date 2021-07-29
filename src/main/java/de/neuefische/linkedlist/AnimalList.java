@@ -1,11 +1,11 @@
 package de.neuefische.linkedlist;
 
-public class AnimalList {
+public class AnimalList <T extends Animal>{
 
-    private AnimalListItem head;
+    private AnimalListItem<T> head;
 
-    public void add(Animal animal) {
-        AnimalListItem newItem = new AnimalListItem(animal);
+    public void add(T animal) {
+        AnimalListItem<T> newItem = new AnimalListItem<T>(animal);
         if(isEmpty()){
             setFirstItem(newItem);
         }else {
@@ -17,12 +17,12 @@ public class AnimalList {
         return head == null;
     }
 
-    private void setFirstItem(AnimalListItem item){
+    private void setFirstItem(AnimalListItem<T> item){
         head = item;
     }
 
-    private void appendToLastItem(AnimalListItem item){
-        AnimalListItem current = head;
+    private void appendToLastItem(AnimalListItem<T> item){
+        AnimalListItem<T> current = head;
         while(current.getNext() != null){
             current = current.getNext();
         }
@@ -37,7 +37,7 @@ public class AnimalList {
 
         StringBuilder builder = new StringBuilder(head.getValue().getName());
 
-        AnimalListItem current = head.getNext();
+        AnimalListItem<T> current = head.getNext();
         while(current != null){
             builder.append(" -> ").append(current.getValue().getName());
             current = current.getNext();

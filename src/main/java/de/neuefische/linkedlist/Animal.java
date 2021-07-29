@@ -2,8 +2,8 @@ package de.neuefische.linkedlist;
 
 import java.util.Objects;
 
-public class Animal {
-
+public class Animal implements GetName{
+    
     private String name;
 
     public Animal(String name) {

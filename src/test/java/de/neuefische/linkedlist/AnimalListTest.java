@@ -36,5 +36,23 @@ class AnimalListTest {
         String expected = "dog -> cat -> mouse";
         assertEquals(expected, actual);
     }
+    @Test
+    public void testRemoveFromList(){
+        // GIVEN
+        Animal dog = new Animal("dog");
+        Animal cat = new Animal("cat");
+        Animal mouse = new Animal("mouse");
+        AnimalList list = new AnimalList();
+
+        // WHEN
+        list.add(dog);
+        list.add(cat);
+        list.add(mouse);
+        String actual = list.toString();
+
+        // THEN
+        String expected = "dog -> cat -> mouse";
+        assertEquals(expected, actual);
+    }
 
 }
